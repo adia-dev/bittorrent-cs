@@ -1,4 +1,4 @@
-namespace BitTorrent;
+namespace BitTorrent.BEncodeDecode;
 using System.Text;
 
 public class BDecoding
@@ -25,11 +25,7 @@ public class BDecoding
 
         byte[] bytes = File.ReadAllBytes(path);
 
-        object obj = Decode(bytes);
-
-        Console.WriteLine(obj);
-
-        return obj;
+        return Decode(bytes);
     }
 
     private static object DecodeNextObject(IEnumerator<byte> enumerator)
