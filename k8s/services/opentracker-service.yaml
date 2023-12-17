@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: opentracker-service
+spec:
+  selector:
+    app: opentracker
+  ports:
+  - protocol: TCP
+    name: tcp
+    port: 6969
+    targetPort: 6969
+  - protocol: UDP
+    name: udp
+    port: 6969
+    targetPort: 6969
+
+
