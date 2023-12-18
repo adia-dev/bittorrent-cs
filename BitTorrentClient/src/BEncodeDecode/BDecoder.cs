@@ -1,7 +1,7 @@
 namespace BitTorrent.BEncodeDecode;
 using System.Text;
 
-public class BDecoding
+public class BDecoder
 {
     private static readonly byte[] BCodes = System.Text.Encoding.UTF8.GetBytes("dlie:");
     private static readonly byte DictionaryCode = BCodes[0];
@@ -58,7 +58,7 @@ public class BDecoding
 
         // TODO: create custom exception for parsing errors
         if (!int.TryParse(lengthStr, out int length))
-            throw new Exception("unable to parse length of the byte array.");
+            throw new Exception("unable to parse length of the byte array: " + lengthStr);
 
         byte[] bytes = new byte[length];
 
